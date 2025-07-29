@@ -27,13 +27,15 @@ int main() {
 // better method
 
 bool isPalindrome(int n) {
-    int reverse = 0;
-  
-    int temp = abs(n);
-    while (temp != 0) {
+        if (n < 0)
+                return 0;
+        long int reverse = 0;
+        long int temp = abs(n);
+        
+        while (temp != 0) {
         reverse = (reverse * 10) + (temp % 10);
         temp = temp / 10;
-    }
-
-    return (reverse == abs(n));
+        }
+        
+        return (reverse == abs(n));
 }
