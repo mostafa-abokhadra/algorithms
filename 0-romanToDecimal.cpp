@@ -4,40 +4,40 @@
 
 using namespace std;
 
-int sToInt(string s) {
+int romanToInt(string romanNumber) {
 
 	int decimal = 0;
-	map<char, int> ss;
+	map<char, int> romans;
 
-	ss['I'] = 1;
-	ss['V'] = 5;
-	ss['X'] = 10;
-	ss['L'] = 50;
-	ss['C'] = 100;
-	ss['D'] = 500;
-	ss['M'] = 1000;
+	romans['I'] = 1;
+	romans['V'] = 5;
+	romans['X'] = 10;
+	romans['L'] = 50;
+	romans['C'] = 100;
+	romans['D'] = 500;
+	romans['M'] = 1000;
 
-	for (int i = 0; i < s.size(); i++) {
-		if (s[i] == 'I' && i != s.size() - 1 && s[i + 1] == 'V') {
+	for (int i = 0; i < roman.size(); i++) {
+		if (s[i] == 'I' && i != roman.size() - 1 && s[i + 1] == 'V') {
 			decimal += 4; i++;
 		}
-		else if (s[i] == 'I' && i != s.size() - 1 && s[i + 1] == 'X') {
+		else if (s[i] == 'I' && i != roman.size() - 1 && s[i + 1] == 'X') {
                         decimal += 9; i++;
                 }
-		else if (s[i] == 'X' && i != s.size() - 1 && s[i + 1] == 'L') {
+		else if (s[i] == 'X' && i != roman.size() - 1 && s[i + 1] == 'L') {
                         decimal += 40; i++;
                 }
-		else if (s[i] == 'X' && i != s.size() - 1 && s[i + 1] == 'C') {
+		else if (s[i] == 'X' && i != roman.size() - 1 && s[i + 1] == 'C') {
                         decimal += 90; i++;
                 }
-		else if (s[i] == 'C' && i != s.size() - 1 && s[i + 1] == 'D') {
+		else if (s[i] == 'C' && i != roman.size() - 1 && s[i + 1] == 'D') {
                         decimal += 400; i++;
                 }
-		else if (s[i] == 'C' && i != s.size() - 1 && s[i + 1] == 'M') {
+		else if (s[i] == 'C' && i != roman.size() - 1 && s[i + 1] == 'M') {
                         decimal += 900; i++;
                 }
 		else
-			decimal += ss[s[i]];
+			decimal += romans[roman[i]];
 	}
 
 	return decimal;
