@@ -42,7 +42,31 @@ int romanToInt(string romanNumber) {
 
 	return decimal;
 }
+
+// better solution
+int romanToIntEnhanced(string roman) {
+
+	int total = 0;
+    unordered_map<char, int> romans = {
+        {'I', 1}, {'V', 5}, {'X', 10},
+        {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000}
+    };
+	
+	int total = 0;
+    int prev = 0;
+
+    for (int i = roman.size() - 1; i >= 0; i--) {
+        int curr = romans[roman[i]];
+        if (curr < prev)
+            total -= curr;   // subtract if smaller before larger (e.g., IV, IX)
+        else
+            total += curr;   // otherwise, just add
+        prev = curr;
+    }
+    return total;
+}
+
 int main() {
-	cout << sToInt("MCMXCIV") << endl;
+	cout << romanToIntEnhanced("MCMXCIV") << endl;
 	return 0;
 }
