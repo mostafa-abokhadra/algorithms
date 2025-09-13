@@ -1,6 +1,9 @@
 # include <iostream>
 using namespace std;
 
+/*
+ *
+ */
 void insertionSort(int array[], int size){
     
     int current, j;
@@ -9,7 +12,7 @@ void insertionSort(int array[], int size){
         j = i - 1;          // Start comparing with the previous element
 
         // Shift elements greater than 'current' to the right
-        while (current < array[j] && j >= 0) {
+        while (current < array[j] && j >= 0) { // if you want to sort from bigger to smaller, you would only have to replace '<' with '>' in "current < array[j]"
             array[j + 1] = array[j]; // shifting the greater element to the right
             --j;
         }
