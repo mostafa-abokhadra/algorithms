@@ -2,7 +2,18 @@
 using namespace std;
 
 /*
- *
+* ======================== how does it work =========================================
+ * insertion sort, which is an efficient algorithm for sorting a small number of elements.
+ * Insertion sort works the way you might sort a hand of playing cards.
+ * Start with an empty left hand and the cards in a pile on the table.
+ * Pick up the first card in the pile and hold it with your left hand.
+ * Then, with your right hand, remove one card at a time from the pile, and insert it into the correct position in your left hand. 
+ * You find the correct position for a card by comparing it with each of the cards already in your left hand, starting at the right and moving left.
+ * As soon as you see a card in your left hand whose value is less than or equal to the card you’re holding in your right hand,
+ * Insert the card that you’re holding in your right hand just to the right of this card in your left hand.
+ * If all the cards in your left hand have values greater than the card in your right hand, then place this card as the leftmost card in your left hand.
+ * At all times, the cards held in your left hand are sorted, and these cards were originally the top cards of the pile on the table
+ * ========================================================================================
  */
 void insertionSort(int array[], int size){
     
